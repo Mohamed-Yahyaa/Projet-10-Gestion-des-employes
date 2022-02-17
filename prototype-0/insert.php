@@ -1,6 +1,6 @@
 <?php 
     if ( !empty($_POST)) { 
-        // post values
+        
         $fname  = $_POST['fname'];
         $lname  = $_POST['lname'];
         $age    = $_POST['age'];
@@ -9,8 +9,7 @@
       
 		$file = file_get_contents('people.json');
 		$data = json_decode($file, true);
-		// unset($_POST["add"]);
-		// $data["records"] = array_values($data["records"]);
+		
 		array_push($data, $person);
 		file_put_contents("people.json", json_encode($data));
 		header("Location: index.php");
@@ -20,7 +19,7 @@
 <div>
         <div>
 		<div><h3>Create a User</h3>
-        <form method="POST" action="">
+        <form method="post" action="">
 			<div>
 				<label for="inputFName">First Name</label>
 				<input type="text" required="required" id="inputFName" name="fname" placeholder="First Name">
