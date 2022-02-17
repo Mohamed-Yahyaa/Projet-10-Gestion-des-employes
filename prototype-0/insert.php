@@ -22,24 +22,24 @@
         <form method="post" action="">
 			<div>
 				<label for="inputFName">First Name</label>
-				<input type="text" required="required" id="inputFName" name="fname" placeholder="First Name">
+				<input type="text" required="required" name="fname" placeholder="First Name">
 				<span></span>
 			</div>
 			
 			<div>
 				<label for="inputLName">Last Name</label>
-				<input type="text" required="required" id="inputLName" name="lname" placeholder="Last Name">
+				<input type="text" required="required"  name="lname" placeholder="Last Name">
         		<span></span>
 			</div>
 			
 			<div>
 				<label for="inputAge">Age</label>
-				<input type="number" required="required" class="form-control" id="inputAge" name="age" placeholder="Age">
+				<input type="number" required="required" class="form-control"  name="age" placeholder="Age">
 				<span></span>
 			</div>
 				<div class="form-group">
 					<label for="inputGender">Gender</label>
-					<select class="form-control" required="required" id="inputGender" name="gender" >
+					<select class="form-control" required="required"  name="gender" >
 						<option>Please Select</option>
 						<option value="Male">Male</option>
 						<option value="Female">Female</option>
