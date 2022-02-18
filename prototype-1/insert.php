@@ -1,11 +1,11 @@
 <?php 
     if ( !empty($_POST)) { 
-        
+        $id = uniqid();
         $fname  = $_POST['fname'];
         $lname  = $_POST['lname'];
         $age    = $_POST['age'];
         $gender = $_POST['gender'];
-		$person = array($fname, $lname, $age, $gender); 
+		$person = array($id, $fname, $lname, $age, $gender); 
       
 		$file = file_get_contents('people.json');
 		$data = json_decode($file);
@@ -22,19 +22,19 @@
         <form method="post" action="">
 			<div>
 				<label for="inputFName">First Name</label>
-				<input type="text" required="required" name="fname" placeholder="First Name">
+				<input type="text" required name="fname" placeholder="First Name">
 				<span></span>
 			</div>
 			
 			<div>
 				<label for="inputLName">Last Name</label>
-				<input type="text" required="required"  name="lname" placeholder="Last Name">
+				<input type="text" required  name="lname" placeholder="Last Name">
         		<span></span>
 			</div>
 			
 			<div>
 				<label for="inputAge">Age</label>
-				<input type="number" required="required" class="form-control"  name="age" placeholder="Age">
+				<input type="number" required class="form-control"  name="age" placeholder="Age">
 				<span></span>
 			</div>
 				<div class="form-group">
