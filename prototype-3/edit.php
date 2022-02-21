@@ -1,24 +1,32 @@
 <?php
-
     include 'config.php';
-	include 'employee.php';
-	include 'employeeManager.php';
+    include 'employee.php';
+    include 'employeeManager.php';
 
-    if(!empty($_POST)){
-		$employee = new Employee();	
-		$employeeManager = new EmployeeManager();
+    $employeeManager = new EmployeeManager();
+
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $employee = $employeeManager->getEmployee($conn, $id);
+
+    }
+
+    if(isset($_POST['update'])){
+        $employee = new Employee();
 
         $employee->setFirstName($_POST['fname']);
         $employee->setLastName($_POST['lname']);
-        $employee->setAge($_POST['age']);
         $employee->setGender($_POST['gender']);
+        $employee->setAge($_POST['age']);
 
-		$employeeManager->insertEmployee($conn, $employee);
-     
-        header("Location: index.php");
+        $employeeManager->editEmployee($conn, $employee, $id);
 
+        header('Location: index.php');
+        
     }
 ?>
+
+
 
 
 <!DOCTYPE html>
@@ -36,33 +44,33 @@
         <form method="POST" action="">
 			<div>
 				<label for="inputFName">First Name</label>
-				<input type="text" required="required" id="inputFName" name="fname" placeholder="First Name">
+				<input type="text" required="required" id="inputFName" value=<?php echo $employee['first_name']?> name="fname" placeholder="First Name">
 				<span></span>
 			</div>
 			
 			<div>
 				<label for="inputLName">Last Name</label>
-				<input type="text" required="required" id="inputLName" name="lname" placeholder="Last Name">
+				<input type="text" required="required" id="inputLName" value=<?php echo $employee['last_name']?> name="lname" placeholder="Last Name">
         		<span></span>
 			</div>
 			
 			<div>
 				<label for="inputAge">Age</label>
-				<input type="number" required="required" class="form-control" id="inputAge" name="age" placeholder="Age">
+				<input type="number" required="required" class="form-control" id="inputAge" value=<?php echo $employee['age']?> name="age" placeholder="Age">
 				<span></span>
 			</div>
 				<div class="form-group">
 					<label for="inputGender">Gender</label>
 					<select class="form-control" required="required" id="inputGender" name="gender" >
 						<option>Please Select</option>
-						<option value="Male">Male</option>
-						<option value="Female">Female</option>
+                        <option value="Male" <?= $employee['gender']== 'Male' ? 'selected' : '' ?>>Male</option>
+						<option value="Female" <?= $employee['gender']== 'Female' ? 'selected' : '' ?>>Female</option>
 					</select>
 					<span></span>
         		</div>
     
 			<div class="form-actions">
-					<button type="submit">Create</button>
+					<input name="update" type="submit" value="Update">
 					<a href="index.php">Back</a>
 			</div>
 		</form>
