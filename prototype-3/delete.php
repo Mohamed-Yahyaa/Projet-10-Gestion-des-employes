@@ -1,12 +1,13 @@
 <?php
-    include "config.php";
-    include "employeeManager.php";
-    
-        if(isset($_GET['id'])){
-            $id = $_GET['id'];
-           
-            $employeeManager = new EmployeeManager();
-            $employeeManager->deleteEmployee($conn, $id);
-            header('Location: index.php');   
-    }
+    include "GestionEmployee.php";
+
+if(isset($_GET['id'])){
+
+    // Trouver tous les employés depuis la base de données 
+    $gestionEmployee = new GestionEmployee();
+    $id = $_GET['id'] ;
+    $gestionEmployee->delete($id);
+        
+    header('Location: index.php');
+}
 ?>

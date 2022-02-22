@@ -1,48 +1,40 @@
 <?php
-    class Employee {
-        private $id;
-        private $firstName;
-        private $lastName;
-        private $gender;
-        private $age;
 
-        public function getId(){
-            return $this->id;
-        }
-        public function setId($value){
-            $this->id = $value;
-        }
+class Employe{
+    private $Id;
+    private $firstName;
+    private $lastName;
+    private $Date_of_Birth;
 
-        public function getFirstName(){
-            return $this->firstName;
-        }
-
-        public function setFirstName($value){
-            $this->firstName = $value;
-        }
-
-        public function getLastName(){
-            return $this->lastName;
-        }
-
-        public function setLastName($value){
-            $this->lastName= $value;
-        }
-
-        public function getGender(){
-            return $this->gender;
-        }
-
-        public function setGender($value){
-            $this->gender= $value;
-        }
-
-        public function getAge(){
-            return $this->age;
-        }
-
-        public function setAge($value){
-            $this->age = $value;
-        }
+    
+    public function getId() {
+        return $this->Id;
     }
+    public function setId($id) {
+        $this->Id = $id;
+    }
+
+    public function getfirstName() {
+        return $this->firstName;
+    }
+    public function setfirstName($nom) {
+        $this->fristName = $nom;
+    }
+
+    public function getlastName() {
+        return $this->lastName;
+    }
+    public function setlastName($prenom) {
+        $this->lastName = $prenom;
+    }
+
+    public function getDate_of_Birth() {
+        return $this->Date_de_naissance;
+    }
+    public function setDate_of_Birth($Date_de_naissance) {
+        $this->Date_de_naissance = $Date_de_naissance;
+    }
+
+}
+     
 ?>

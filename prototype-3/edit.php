@@ -1,80 +1,60 @@
 <?php
-    include 'config.php';
-    include 'employee.php';
-    include 'employeeManager.php';
 
-    $employeeManager = new EmployeeManager();
+include "GestionEmployee.php";
+$gestionEmployee = new GestionEmployee();
 
-    if(isset($_GET['id'])){
-        $id = $_GET['id'];
-        $employee = $employeeManager->getEmployee($conn, $id);
+if(isset($_GET['id'])){
+    $employe = $gestionEmployee->RechercherParId($_GET['id']);
+}
 
-    }
-
-    if(isset($_POST['update'])){
-        $employee = new Employee();
-
-        $employee->setFirstName($_POST['fname']);
-        $employee->setLastName($_POST['lname']);
-        $employee->setGender($_POST['gender']);
-        $employee->setAge($_POST['age']);
-
-        $employeeManager->editEmployee($conn, $employee, $id);
-
-        header('Location: index.php');
-        
-    }
+if(isset($_POST['modifier'])){
+    $id = $_POST['id'];
+    $firstName = $_POST['firstName'];
+    $prefirstName = $_POST['PrefirstName'];
+    $dateNaissance = $_POST['Date_of_Birth'];
+    $gestionEmployee->Modifier($id,$firstName,$prefirstName,$Date_of_Birth);
+    header('Location: index.php');
+}
 ?>
-
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Modifier : </title>
 </head>
 <body>
-<div>
-        <div>
-		<div><h3>Create a User</h3>
-        <form method="POST" action="">
-			<div>
-				<label for="inputFName">First Name</label>
-				<input type="text" required="required" id="inputFName" value=<?php echo $employee['firstName']?> name="fname" placeholder="First Name">
-				<span></span>
-			</div>
-			
-			<div>
-				<label for="inputLName">Last Name</label>
-				<input type="text" required="required" id="inputLName" value=<?php echo $employee['lastName']?> name="lname" placeholder="Last Name">
-        		<span></span>
-			</div>
-			
-			<div>
-				<label for="inputAge">Age</label>
-				<input type="number" required="required" class="form-control" id="inputAge" value=<?php echo $employee['age']?> name="age" placeholder="Age">
-				<span></span>
-			</div>
-				<div class="form-group">
-					<label for="inputGender">Gender</label>
-					<select class="form-control" required="required" id="inputGender" name="gender" >
-						<option>Please Select</option>
-                        <option value="Male" <?= $employee['gender']== 'Male' ? 'selected' : '' ?>>Male</option>
-						<option value="Female" <?= $employee['gender']== 'Female' ? 'selected' : '' ?>>Female</option>
-					</select>
-					<span></span>
-        		</div>
-    
-			<div class="form-actions">
-					<input name="update" type="submit" value="Update">
-					<a href="index.php">Back</a>
-			</div>
-		</form>
-        </div></div>        
-</div>
+
+<h1>Modification de l'employé : <?=$employe->getfirstName() ?></h1>
+<form method="post" action="">
+    <input type="text" required="required" 
+        id="Id" name="Id"   
+        value=<?php echo $employe->getId()?> >
+
+    <div>
+        <label for="firstName">firstName</label>
+        <input type="text" required="required" 
+        id="firstName" name="firstName"  placeholder="firstName" 
+        value=<?php echo $employe->getfirstName()?> >
+    </div>
+    <div>
+        <label for="PrefirstName">PréfirstName</label>
+        <input type="text" required="required" 
+        id="PrefirstName" name="PrefirstName" placeholder="PréfirstName"
+        value=<?php echo $employe->getPrefirstName()?>>
+    </div>
+    <div>
+        <label for="Date_of_Birth">Date of Birth</label>
+        <input type="date" required="required"  
+        id="Date_of_Birth"  name="Date_of_Birth" placeholder="Date de naissance"
+        value=<?php echo $employe->getDate_of_Birth()?>>
+    </div>
+    <div>
+        <input name="modifier" type="submit" value="Modifier">
+        <a href="index.php">Annuler</a>
+    </div>
+</form>
 </body>
 </html>
