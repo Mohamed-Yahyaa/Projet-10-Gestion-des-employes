@@ -44,13 +44,13 @@
         <form method="POST" action="">
 			<div>
 				<label for="inputFName">First Name</label>
-				<input type="text" required="required" id="inputFName" value=<?php echo $employee['first_name']?> name="fname" placeholder="First Name">
+				<input type="text" required="required" id="inputFName" value=<?php echo $employee['firstName']?> name="fname" placeholder="First Name">
 				<span></span>
 			</div>
 			
 			<div>
 				<label for="inputLName">Last Name</label>
-				<input type="text" required="required" id="inputLName" value=<?php echo $employee['last_name']?> name="lname" placeholder="Last Name">
+				<input type="text" required="required" id="inputLName" value=<?php echo $employee['lastName']?> name="lname" placeholder="Last Name">
         		<span></span>
 			</div>
 			
