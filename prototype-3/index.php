@@ -16,7 +16,7 @@
 </head>
 <body>
     <div>
-        <a href="ajouter.php">Ajouter un employé</a>
+        <a href="ajouter.php">Add</a>
         <table>
             <tr>
                 <th>firstName</th>

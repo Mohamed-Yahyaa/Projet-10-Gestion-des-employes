@@ -22,5 +22,5 @@ firstName: <input type="text" name="firstName" >
 lastName : <input type="text" name="lastName" >
 Date_of_Birth : <input type="date"  name="Date_of_Birth" >
    
-<button type="submit">modifier</button>
+<button type="submit">Ajouter</button>
 </form>
