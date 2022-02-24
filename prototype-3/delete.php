@@ -1,5 +1,5 @@
 <?php
-    include "GestionEmployee.php";
+    include "employeeManager.php";
 
 if(isset($_GET['id'])){
 

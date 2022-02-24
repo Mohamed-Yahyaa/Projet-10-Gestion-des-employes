@@ -1,6 +1,6 @@
 <?php
 
-include "GestionEmployee.php";
+include "employeeManager.php";
 $gestionEmployee = new GestionEmployee();
 
 if(isset($_GET['id'])){
@@ -10,7 +10,7 @@ if(isset($_GET['id'])){
 if(isset($_POST['modifier'])){
     $id = $_POST['id'];
     $firstName = $_POST['firstName'];
-    $prefirstName = $_POST['PrefirstName'];
+    $prefirstName = $_POST['lastName'];
     $dateNaissance = $_POST['Date_of_Birth'];
     $gestionEmployee->Modifier($id,$firstName,$prefirstName,$Date_of_Birth);
     header('Location: index.php');
@@ -40,10 +40,10 @@ if(isset($_POST['modifier'])){
         value=<?php echo $employe->getfirstName()?> >
     </div>
     <div>
-        <label for="PrefirstName">PréfirstName</label>
+        <label for="lastName">lastName</label>
         <input type="text" required="required" 
-        id="PrefirstName" name="PrefirstName" placeholder="PréfirstName"
-        value=<?php echo $employe->getPrefirstName()?>>
+        id="lastName" name="lastName" placeholder="lastName"
+        value=<?php echo $employe->getlastName()?>>
     </div>
     <div>
         <label for="Date_of_Birth">Date of Birth</label>
