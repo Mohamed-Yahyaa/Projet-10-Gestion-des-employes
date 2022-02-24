@@ -1,14 +1,13 @@
 <?php
     include '../employeeManager.php';
 
-    $employeeManager = new EmployeeManager();
-    $employee_data = $employeeManager->getAllEmployees();
+    $employeeManager = new GestionEmployee();
+    $employee_data = $employeeManager->afficher();
 
     foreach($employee_data as $employee){
         echo $employee->getId();
         echo $employee->getFirstName();
         echo $employee->getLastName();
-        echo $employee->getGender();
-        echo $employee->getAge();
+        echo $employee->getDate_of_Birth();
     }
 ?>
