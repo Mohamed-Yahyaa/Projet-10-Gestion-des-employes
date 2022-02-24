@@ -21,7 +21,7 @@ class GestionEmployee{
         $lastName = $employe->getlastName();
         $Date_of_Birth = $employe->getDate_of_Birth();
         // requête SQL
-        $insertRow="INSERT INTO personnes(firstName, lastName, Date_of_Birth) 
+        $insertRow="INSERT INTO employee(firstName, lastName, Date_of_Birth) 
                                 VALUES('$firstName', '$lastName', '$Date_of_Birth')";
 
         mysqli_query($this->getConnection(), $insertRow);
@@ -36,7 +36,7 @@ class GestionEmployee{
 
         $TableData = array();
         foreach ($employes_data as $value_Data) {
-            $employe = new Employe();
+            $employe = new Employee();
             $employe->setId($value_Data['id']);
             $employe->setfirstName($value_Data['firstName']);
             $employe->setlastName ($value_Data['lastName']);

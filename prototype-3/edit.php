@@ -11,7 +11,7 @@ if(isset($_POST['modifier'])){
     $id = $_POST['id'];
     $firstName = $_POST['firstName'];
     $prefirstName = $_POST['lastName'];
-    $dateNaissance = $_POST['Date_of_Birth'];
+    $Date_of_Birth = $_POST['Date_of_Birth'];
     $gestionEmployee->Modifier($id,$firstName,$prefirstName,$Date_of_Birth);
     header('Location: index.php');
 }
@@ -30,7 +30,7 @@ if(isset($_POST['modifier'])){
 <h1>Modification de l'employé : <?=$employe->getfirstName() ?></h1>
 <form method="post" action="">
     <input type="text" required="required" 
-        id="Id" name="Id"   
+        id="Id" name="id"   
         value=<?php echo $employe->getId()?> >
 
     <div>
@@ -48,7 +48,7 @@ if(isset($_POST['modifier'])){
     <div>
         <label for="Date_of_Birth">Date of Birth</label>
         <input type="date" required="required"  
-        id="Date_of_Birth"  name="Date_of_Birth" placeholder="Date de naissance"
+        id="Date_of_Birth"  name="Date_of_Birth" placeholder="Date of Birth"
         value=<?php echo $employe->getDate_of_Birth()?>>
     </div>
     <div>
