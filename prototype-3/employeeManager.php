@@ -61,7 +61,7 @@ class GestionEmployee{
         return $employe;
     }
 
-    public function Supprimer($id){
+    public function delete($id){
         $RowDelet = "DELETE FROM employee WHERE id= '$id'";
         mysqli_query($this->getConnection(), $RowDelet);
     }
