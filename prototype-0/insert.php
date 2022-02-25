@@ -3,8 +3,9 @@
         
         $fname  = $_POST['fname'];
         $lname  = $_POST['lname'];
+		$gender = $_POST['gender'];
         $age    = $_POST['age'];
-        $gender = $_POST['gender'];
+       
 		$person = array($fname, $lname, $age, $gender); 
       
 		$file = file_get_contents('people.json');
