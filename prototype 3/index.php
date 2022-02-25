@@ -33,10 +33,16 @@
             ?>
 
             <tr>
+<<<<<<< HEAD
+                <td><?= $employee->getfname()?></td>
+                <td><?= $employee->getlname()?></td>
+                <td><?= $employee->getage()?></td>
+=======
                 <td><?= $employee->getFirstName()?></td>
                 <td><?= $employee->getLastName()?></td>
                 <td><?= $employee->getAge()?></td>
                 <td><?= $employee->getGender()?></td>
+>>>>>>> 3bf99ed5edb18d1b1107d6b39589fb98974a404b
                 <td>
                     <a href="edit.php?id=<?php echo $employee->getId() ?>">Edit</a>
                     <a href="delete.php?id=<?php echo $employee->getId() ?>">delete</a>
