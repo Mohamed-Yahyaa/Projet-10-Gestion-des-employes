@@ -13,7 +13,7 @@ $data = json_decode($getfile);
                     <th>Action</th>
 					
 				</tr>		
-				<? foreach ($data as $value){
+				<?php foreach ($data as $value){
 				?>
 				<tr>
 					<td><?php echo $value[1]; ?></td>
