@@ -1,5 +1,4 @@
 <?php  
-      include 'config.php';
       include 'employeeManager.php';
 
       $employeeManager = new EmployeeManager() ;
