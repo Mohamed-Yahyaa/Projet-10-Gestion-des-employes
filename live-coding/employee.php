@@ -44,6 +44,4 @@ public function setage($value){
 }
 }
 
-
-
 ?>
