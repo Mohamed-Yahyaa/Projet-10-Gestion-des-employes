@@ -61,7 +61,7 @@
 								<td class="column100 column1" data-column="column1"><?= $employee->getNom()?></td>
 								<td class="column100 column2" data-column="column2"><?= $employee->getPrenom()?></td>
 								<td class="column100 column3" data-column="column3"><?= $employee->getDateNaissance()?></td>
-								<td class="column100 column4" data-column="column4"><?= $employee->getDéoartement()?></td>
+								<td class="column100 column4" data-column="column4"><?= $employee->getDépartement()?></td>
 								<td class="column100 column5" data-column="column5"><?= $employee->getSalaire()?></td>
 								<td class="column100 column6" data-column="column6"><?= $employee->getfonction()?></td>
 								<td class="column100 column7" data-column="column7" >

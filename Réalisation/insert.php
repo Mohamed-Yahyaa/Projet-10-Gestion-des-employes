@@ -9,7 +9,7 @@
         $employee->setNom($_POST['Nom']);
         $employee->setPrenom($_POST['Prenom']);
         $employee->setDateNaissance($_POST['dateNaissance']);
-		$employee->setDéoartement($_POST['Département']);
+		$employee->setDépartement($_POST['Département']);
 		$employee->setSalaire($_POST['Salaire']);
 		$employee->setFonction($_POST['Fonction']);
 		$employee->setPhoto($ficher);
