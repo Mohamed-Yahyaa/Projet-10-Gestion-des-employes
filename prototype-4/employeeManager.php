@@ -17,7 +17,7 @@
                 $employee->setLastName($employee_list->last_name);
                 $employee->setGender($employee_list->gender);
                 $employee->setAge($employee_list->age);
-                array_push($employees, $employee);
+                array_push($employees, $employee);  
             }
 
             return $employees;
