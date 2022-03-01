@@ -7,7 +7,7 @@
 
         public function getAllEmployees(){
        
-            $file = file_get_contents('employees.json');
+            $file = file_get_contents('employee.json');
             $employeesList = json_decode($file);
             $employees = array();
             foreach($employeesList as $employee_list){
@@ -29,7 +29,7 @@
             $employee->setId(uniqid(false));
 
 
-            $file = file_get_contents('employees.json');
+            $file = file_get_contents('employee.json');
             $data = json_decode($file);
             $employeeToList = array(
                                     'id'=> $employee->getId(),
@@ -41,18 +41,18 @@
             
 
             array_push($data, $employeeToList);
-            file_put_contents('employees.json', json_encode($data));
+            file_put_contents('employee.json', json_encode($data));
         }
 
 
         public function deleteEmployee($id){
-            $data = json_decode(file_get_contents('employees.json'));
+            $data = json_decode(file_get_contents('employee.json'));
             for($i = 0; $i < count($data); ++$i){
                 if($data[$i]->id== $id){
                     unset($data[$i]);
                     // Remove the keys from data array after remove the item
                     $data = array_values($data);
-                    file_put_contents("employees.json",json_encode($data));
+                    file_put_contents("employee.json",json_encode($data));
                     break;
                 }
             }
@@ -60,7 +60,7 @@
 
 
         public function editEmployee($id, $first_name, $last_name, $gender, $age){
-            $file = file_get_contents('employees.json');
+            $file = file_get_contents('employee.json');
             $data = json_decode($file);
             $employeeToList = array(
                                     'id'=> $id,
@@ -77,12 +77,12 @@
                 break;
             }
            }
-            file_put_contents('employees.json', json_encode($data));
+            file_put_contents('employee.json', json_encode($data));
        
         }
 
         public function getEmployee($id){
-            $file = file_get_contents("employees.json");
+            $file = file_get_contents("employee.json");
             $data = json_decode($file);
             $employee = new Employee();
 

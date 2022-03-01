@@ -8,7 +8,9 @@
         $employee->setFirstName($_POST['fname']);
         $employee->setLastName($_POST['lname']);
         $employee->setAge($_POST['age']);
-        $employee->setGender($_POST['gender']);
+		$employee->setGender($_POST['gender']);
+
+        
 
 		$employeeManager->insertEmployee($employee);
         header("Location: index.php");
