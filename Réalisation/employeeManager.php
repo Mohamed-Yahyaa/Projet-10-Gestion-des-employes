@@ -7,7 +7,7 @@
 
         private function getConnection(){
             if(is_null($this->Connection)){
-                $this->Connection = mysqli_connect('localhost', 'yahya', 'DIXTERMORGEN', 'demo1');
+                $this->Connection = mysqli_connect('localhost', 'yahya', 'DIXTERMORGEN', 'demo2');
 
                 if(!$this->Connection){
                     $message = 'Connection Error: ' .mysqli_connect_error();
@@ -19,7 +19,7 @@
 
         
         public function getAllEmployees(){
-            $sqlGetData = 'SELECT * FROM employes';
+            $sqlGetData = 'SELECT * FROM employees';
             $result = mysqli_query($this->getConnection() ,$sqlGetData);
             $employeesList = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -27,13 +27,14 @@
             foreach($employeesList as $employee_list){
                 $employee = new Employee();
                 $employee->setId($employee_list['id']);
-                $employee->setNom($employee_list['Nom']);
-                $employee->setPrenom($employee_list['Prenom']);
-                $employee->setDateNaissance($employee_list['DateNaissance']);
-                $employee->setDépartement($employee_list['Département']);
-                $employee->setFonction($employee_list['Fonction']);
-                $employee->setSalaire($employee_list['Salaire']);
-                $employee->setPhoto($employee_list['Photo']);
+                $employee->setmatricule($employee_list['matricule']);
+                $employee->setnom($employee_list['nom']);
+                $employee->setprenom($employee_list['prenom']);
+                $employee->setdate_de_naissance($employee_list['date_de_naissance']);
+                $employee->setdépartement($employee_list['département']);
+                $employee->setfonction($employee_list['fonction']);
+                $employee->setsalaire($employee_list['salaire']);
+                $employee->setphoto($employee_list['photo']);
                 
 
                 array_push($employees, $employee);
@@ -44,22 +45,24 @@
 
 
         public function insertEmployee($employee){
-            $Nom = $employee->getNom ();
-            $Prenom = $employee->getPrenom();
-            $DateNaissance  = $employee->getDateNaissance();
-            $Département  = $employee->getDépartement();
-            $Fonction = $employee->getFonction();
-            $Salaire = $employee->getSalaire();
-            $Photo = $employee->getPhoto();
+            $matricule = $employee->getmatricule ();
+            $nom = $employee->getnom ();
+            $prenom = $employee->getprenom();
+            $date_de_naissance  = $employee->getdate_de_naissance();
+            $département  = $employee->getdépartement();
+            $fonction = $employee->getfonction();
+            $salaire = $employee->getsalaire();
+            $photo = $employee->getphoto();
                  // sql insert query
-        $sqlInsertQuery = "INSERT INTO employes(Nom, Prenom,  DateNaissance ,  Département , Fonction , Salaire ,Photo) 
-                            VALUES('$Nom', 
-                                    '$Prenom',
-                                    '$DateNaissance',
-                                    '$Département',
-                                    '$Fonction',
-                                    '$Salaire',
-                                    '$Photo'
+        $sqlInsertQuery = "INSERT INTO employees(matricule,nom, prenom,  date_de_naissance ,  département , fonction , salaire ,photo) 
+                            VALUES( '$matricule',
+                                    '$nom', 
+                                    '$prenom',
+                                    '$date_de_naissance',
+                                    '$département',
+                                    '$fonction',
+                                    '$salaire',
+                                    '$photo'
                                     )";
 
         mysqli_query($this->getConnection(), $sqlInsertQuery);
@@ -75,30 +78,32 @@
         }
 
         public function deleteEmployee($id){
-            $sqlDeleteQuery = "DELETE FROM employes WHERE id= '$id'";
+            $sqlDeleteQuery = "DELETE FROM employees WHERE id= '$id'";
 
             mysqli_query($this->getConnection(), $sqlDeleteQuery);
         }
 
 
         public function editEmployee($employee,$id){
-            $Nom = $employee->getNom();
-            $Prenom = $employee->getPrenom();
-            $DateNaissance = $employee->getDateNaissance();
-            $Département = $employee->getDépartement ();
-            $Fonction = $employee->getFonction();
-            $Salaire = $employee->getSalaire();
-            $Photo = $employee->getPhoto();
+            $matricule = $employee->getmatricule ();
+            $nom = $employee->getnom();
+            $prenom = $employee->getprenom();
+            $date_de_naissance = $employee->getdate_de_naissance();
+            $département = $employee->getdépartement ();
+            $fonction = $employee->getfonction();
+            $salaire = $employee->getsalaire();
+            $photo = $employee->getphoto();
      
             // Update query
-            $sqlUpdateQuery = "UPDATE employes SET 
-                         Nom='$Nom', 
-                         Prenom='$Prenom', 
-                         DateNaissance='$DateNaissance',
-                         Département = '$Département',
-                         Fonction = '$Fonction',
-                         Salaire = '$Salaire',
-                         Photo = '$Photo'
+            $sqlUpdateQuery = "UPDATE employees SET 
+                         matricule='$matricule',
+                         nom='$nom', 
+                         prenom='$prenom', 
+                         date_de_naissance='$date_de_naissance',
+                         département = '$département',
+                         fonction = '$fonction',
+                         salaire = '$salaire',
+                         photo = '$photo'
                          WHERE id=$id";
      
              // Make query 
@@ -111,7 +116,7 @@
 
        
       public function getEmployee($id){
-        $sqlGetQuery = "SELECT * FROM employes WHERE id= $id";
+        $sqlGetQuery = "SELECT * FROM employees WHERE id= $id";
     
         // get result
         $result = mysqli_query($this->getConnection(), $sqlGetQuery);
@@ -122,13 +127,14 @@
         $employee = new Employee();
 
         $employee->setId($employee_data['id']);
-        $employee->setNom($employee_data['Nom']);
-        $employee->setPrenom($employee_data['Prenom']);
-        $employee->setDateNaissance($employee_data['DateNaissance']);
-        $employee->setDépartement($employee_data['Département']);
-        $employee->setFonction($employee_data['Fonction']);
-        $employee->setSalaire($employee_data['Salaire']);
-        $employee->setPhoto($employee_data['Photo']);
+        $employee->setmatricule($employee_data['matricule']);
+        $employee->setnom($employee_data['nom']);
+        $employee->setprenom($employee_data['prenom']);
+        $employee->setdate_de_naissance($employee_data['date_de_naissance']);
+        $employee->setdépartement($employee_data['département']);
+        $employee->setfonction($employee_data['fonction']);
+        $employee->setsalaire($employee_data['salaire']);
+        $employee->setphoto($employee_data['photo']);
         return $employee;
     }  
     

@@ -1,9 +1,10 @@
 <?php
     class Employee {
         private $id;
+        private $matricule;
         private $Nom;
         private $Prenom;
-        private $DateNaissance;
+        private $date_de_naissance;
         private $Département;
         private $Salaire;
         private $Photo;
@@ -14,6 +15,14 @@
         }
         public function setId($value){
             $this->id = $value;
+        }
+
+        public function getmatricule(){
+            return $this->matricule;
+        }
+
+        public function setmatricule($value){
+            $this->matricule = $value;
         }
 
         public function getNom(){
@@ -32,12 +41,12 @@
             $this->Prenom= $value;
         }
 
-        public function getDateNaissance(){
-            return $this->DateNaissance;
+        public function getdate_de_naissance(){
+            return $this->date_de_naissance;
         }
 
-        public function setDateNaissance($value){
-            $this->DateNaissance= $value;
+        public function setdate_de_naissance($value){
+            $this->date_de_naissance= $value;
         }
 
         public function getDépartement(){

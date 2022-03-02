@@ -15,13 +15,14 @@
 
 		$ficher = $_FILES["uploadfile"]["name"];
 		$employeeToEdit = new Employee();
-	
-		$employeeToEdit->setNom($_POST['Nom']);
-		$employeeToEdit->setPrenom($_POST['Prenom']);
-		$employeeToEdit->setDateNaissance( $_POST['dateNaissance']);
-		$employeeToEdit->setDépartement($_POST['Département']);
-		$employeeToEdit->setFonction($_POST['Fonction']);
-		$employeeToEdit->setSalaire( $_POST['Salaire']) ;
+
+	    $employeeToEdit->setmatricule($_POST['matricule']);
+		$employeeToEdit->setnom($_POST['nom']);
+		$employeeToEdit->setprenom($_POST['prenom']);
+		$employeeToEdit->setdate_de_naissance( $_POST['date_de_naissance']);
+		$employeeToEdit->setdépartement($_POST['département']);
+		$employeeToEdit->setfonction($_POST['fonction']);
+		$employeeToEdit->setsalaire( $_POST['salaire']) ;
 		$tempname = $_FILES["uploadfile"]["tmp_name"];    
 
         if(!empty($ficher)){
@@ -51,38 +52,38 @@
 		      	<form action="#" method="POST" class=""style="background-color: #05445E;border-radius: 16px; text-align: center;margin-top:50px; height: 670px;" enctype='multipart/form-data'>
 				  <h2 style="padding-top:30px; color:white">Ajoute les informations</h2>
 					<div class="">
-						<input style="width:350px ;margin-top:40px; height: 40px; border-radius: 10px;  border:1px solid" type="text" value=<?php echo $employee->getNom() ?> class=" col-6" name="Nom" placeholder="Nom" required>
+						<input style="width:350px ;margin-top:40px; height: 40px; border-radius: 10px;  border:1px solid" type="text" value=<?php echo $employee->getnom() ?> class=" col-6" name="nom" placeholder="nom" required>
 					</div>
 					<div class="">
-						<input type="text" style="width:350px ;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" class=" col-6" value=<?php echo $employee->getPrenom()?> name="Prenom" placeholder="Prenom" required>
+						<input type="text" style="width:350px ;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" class=" col-6" value=<?php echo $employee->getprenom()?> name="prenom" placeholder="prenom" required>
 					</div>
 					<div class="">
-						<input type="Date" style="width:350px ;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" class="col-6 " value=<?php echo $employee->getDateNaissance()?> name="dateNaissance"  required>
+						<input type="Date" style="width:350px ;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" class="col-6 " value=<?php echo $employee->getdate_de_naissance()?> name="date_de_naissance"  required>
 					</div>
 					<div class="" >
-					<select class="form-select "required style="width:350px ;margin-top:20px;margin-left:250px; height: 40px; border-radius: 10px;border:1px solid ;" class="col-6"  name="Département"  aria-label="Default select example">
-										<option selected>Département...</option>
-										<option value="Accounting" <?= $employee->getDépartement()== 'Accounting' ? 'selected' : '' ?>>Accounting</option>
-										<option value="Marketing" <?= $employee->getDépartement()== 'Marketing' ? 'selected' : '' ?>>Marketing</option>
-										<option value="Production" <?= $employee->getDépartement()== 'Production' ? 'selected' : '' ?>>Production</option>
-										<option value="I.T" <?= $employee->getDépartement()== 'I.T' ? 'selected' : '' ?>>I.T</option>
+					<select class="form-select "required style="width:350px ;margin-top:20px;margin-left:250px; height: 40px; border-radius: 10px;border:1px solid ;" class="col-6"  name="département"  aria-label="Default select example">
+										<option selected>département...</option>
+										<option value="Accounting" <?= $employee->getdépartement()== 'Accounting' ? 'selected' : '' ?>>Accounting</option>
+										<option value="Marketing" <?= $employee->getdépartement()== 'Marketing' ? 'selected' : '' ?>>Marketing</option>
+										<option value="Production" <?= $employee->getdépartement()== 'Production' ? 'selected' : '' ?>>Production</option>
+										<option value="I.T" <?= $employee->getdépartement()== 'I.T' ? 'selected' : '' ?>>I.T</option>
 									</select>
 					</div>
 					<div class="">
                                
-									<select class="form-select" class="" required name="Fonction" class="col-6" style="margin-left:250px;width:350px;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" placeholder="Function"  	aria-label="Default select example">
+									<select class="form-select" class="" required name="fonction" class="col-6" style="margin-left:250px;width:350px;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" placeholder="Function"  	aria-label="Default select example">
 										<option selected>Function...</option>
-										<option value="auditor" <?= $employee->getFonction()== 'auditor' ? 'selected' : '' ?>>auditor</option>
-										<option value="CFO" <?= $employee->getFonction()== 'CFO' ? 'selected' : '' ?>>CFO</option>
-										<option value="payroll specialist" <?= $employee->getFonction()== 'payroll specialist' ? 'selected' : '' ?>>payroll specialist</option>
-										<option value="tax specialist" <?= $employee->getFonction()== 'tax specialist' ? 'selected' : '' ?>>tax specialist</option>
-										<option value="advertising manager" <?= $employee->getFonction()== 'advertising manager' ? 'selected' : '' ?>>advertising manager</option>
-										<option value="brand manager"  <?= $employee->getFonction()== 'brand manager' ? 'selected' : '' ?>>brand manager</option>
+										<option value="auditor" <?= $employee->getfonction()== 'auditor' ? 'selected' : '' ?>>auditor</option>
+										<option value="CFO" <?= $employee->getfonction()== 'CFO' ? 'selected' : '' ?>>CFO</option>
+										<option value="payroll specialist" <?= $employee->getfonction()== 'payroll specialist' ? 'selected' : '' ?>>payroll specialist</option>
+										<option value="tax specialist" <?= $employee->getfonction()== 'tax specialist' ? 'selected' : '' ?>>tax specialist</option>
+										<option value="advertising manager" <?= $employee->getfonction()== 'advertising manager' ? 'selected' : '' ?>>advertising manager</option>
+										<option value="brand manager"  <?= $employee->getfonction()== 'brand manager' ? 'selected' : '' ?>>brand manager</option>
                                     </select >
 					</div>
 					
 					<div class="">
-						<input type="number" style="width:350px;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" class="col-6" name="Salaire" value=<?php echo $employee->getSalaire()?> placeholder="Salaire" required>
+						<input type="number" style="width:350px;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" class="col-6" name="salaire" value=<?php echo $employee->getsalaire()?> placeholder="salaire" required>
 					</div>
 					<div class="">
 
