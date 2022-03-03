@@ -51,8 +51,11 @@
 			<div class="col-6 " style="margin-left:320px" >
 		      	<form action="#" method="POST" class=""style="background-color: #05445E;border-radius: 16px; text-align: center;margin-top:50px; height: 670px;" enctype='multipart/form-data'>
 				  <h2 style="padding-top:30px; color:white">Ajoute les informations</h2>
+				  <div class="">
+						<input style="width:350px ;margin-top:40px; height: 40px; border-radius: 10px;  border:1px solid" type="text" value=<?php echo $employee->getmatricule() ?> class=" col-6" name="matricule" placeholder="matricule" required>
+					</div>
 					<div class="">
-						<input style="width:350px ;margin-top:40px; height: 40px; border-radius: 10px;  border:1px solid" type="text" value=<?php echo $employee->getnom() ?> class=" col-6" name="nom" placeholder="nom" required>
+						<input style="width:350px ;margin-top:20px; height: 40px; border-radius: 10px;  border:1px solid" type="text" value=<?php echo $employee->getnom() ?> class=" col-6" name="nom" placeholder="nom" required>
 					</div>
 					<div class="">
 						<input type="text" style="width:350px ;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" class=" col-6" value=<?php echo $employee->getprenom()?> name="prenom" placeholder="prenom" required>
@@ -61,7 +64,7 @@
 						<input type="Date" style="width:350px ;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" class="col-6 " value=<?php echo $employee->getdate_de_naissance()?> name="date_de_naissance"  required>
 					</div>
 					<div class="" >
-					<select class="form-select "required style="width:350px ;margin-top:20px;margin-left:250px; height: 40px; border-radius: 10px;border:1px solid ;" class="col-6"  name="département"  aria-label="Default select example">
+					<select class="form-select "required style="width:350px ;margin-top:20px;margin-left:210px; height: 40px; border-radius: 10px;border:1px solid ;" class="col-6"  name="département"  aria-label="Default select example">
 										<option selected>département...</option>
 										<option value="Accounting" <?= $employee->getdépartement()== 'Accounting' ? 'selected' : '' ?>>Accounting</option>
 										<option value="Marketing" <?= $employee->getdépartement()== 'Marketing' ? 'selected' : '' ?>>Marketing</option>
@@ -71,7 +74,7 @@
 					</div>
 					<div class="">
                                
-									<select class="form-select" class="" required name="fonction" class="col-6" style="margin-left:250px;width:350px;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" placeholder="Function"  	aria-label="Default select example">
+									<select class="form-select" class="" required name="fonction" class="col-6" style="margin-left:210px;width:350px;margin-top:20px; height: 40px; border-radius: 10px;border:1px solid" placeholder="Function"  	aria-label="Default select example">
 										<option selected>Function...</option>
 										<option value="auditor" <?= $employee->getfonction()== 'auditor' ? 'selected' : '' ?>>auditor</option>
 										<option value="CFO" <?= $employee->getfonction()== 'CFO' ? 'selected' : '' ?>>CFO</option>

@@ -1,13 +1,18 @@
-
 <?php
-    include 'employeeManager.php';
-
+    include "employeeManager.php";
     $employeeManager = new EmployeeManager();
-    $data = $employeeManager->getAllEmployees();
+
+    if(!empty($_POST)){      
+        $cherchInput = $_POST["cherchInput"] ;
+        $data = $employeeManager->RechercheParInput($cherchInput);
+    }
+        else{$data = $employeeManager->afficher();}
+
+
 
 ?>
-
-</head>
+   
+   </head>
 	<body>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
