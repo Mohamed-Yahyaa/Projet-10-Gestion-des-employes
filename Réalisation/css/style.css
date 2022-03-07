@@ -5,7 +5,7 @@
 [ FONT ]*/
 
 .btn.btn-primary{
-    background-color:#1856b4 ;
+    background-color:#2255b4 ;
   
   }
   @font-face {
@@ -90,13 +90,13 @@
   [ Ver2 ]*/
   
   .ver2 {
-    border: 2px solid;
+    
     border-radius: 16px;
     overflow: hidden;
   }
   
   .table100.ver2 tbody tr:nth-child(even) {
-    background-color: #7e868fc0;
+    background-color: #13668ab9;
   }
   
   .table100.ver2 td {
@@ -108,16 +108,16 @@
   
   .table100.ver2 th {
     font-family: Montserrat-Medium;
-    font-size: 12px;
+    font-size: 17px;
     color: #fff;
     line-height: 1.4;
     text-transform: uppercase;
-    background-color: #4d545cb7;
+    background-color: #13668ab9;
   }
-  tr {
-    border: 1px solid;
-  }
-  
+
+
+
+
   
   
   

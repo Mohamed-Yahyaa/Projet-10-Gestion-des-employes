@@ -31,15 +31,14 @@
 
 
 <body >
-<nav style="background-color: #05445E;" class="navbar navbar-dark ">
+<nav style="background-color: #012030; height : 100px " class="navbar navbar-dark ">
     <div class="container-fluid">
-    <a class="navbar-brand"><img src="images/stisla.png" alt="logo"></a>
+    <a class="navbar-brand "><img  src="images/PME4.png" style=" max-width:80px " alt="logo"></a>
 	
   
-
 	<div class="nav-item"> 
-	<a href="index.php"  class="btn btn-primary " style=>Retourner</a>
-	<a class=" btn btn-primary" aria-current="page" href="login.php">déconnexion</a>
+	<a href="index.php"  class="btn btn-success" style=>Retourner</a>
+	<a class=" btn btn-Danger" aria-current="page" href="login.php">Déconnexion</a>
 	</div>
 	
 
@@ -47,7 +46,7 @@
     </nav>
 
 			<div class="col-6 " style="margin-left:320px" >
-		      	<form action="#" method="POST"  enctype='multipart/form-data' class=""style=" text-align: center;background-color:#05445E;border-radius: 16px; margin-top:50px; height: 690px;" >
+		      	<form action="#" method="POST"  enctype='multipart/form-data' class=""style=" text-align: center;background-color:#012030;border-radius: 16px; margin-top:50px; height: 690px;" >
 				  <h2 style="padding-top:30px; color:white">Ajoute les informations</h2>
 				  <div class="">
 						<input style="width:350px ;margin-top:40px; height: 40px; border-radius: 10px;  border:1px solid" type="text" class=" col-6" name="Matricule" placeholder="Matricule" required>

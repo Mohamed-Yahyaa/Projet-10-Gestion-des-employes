@@ -6,7 +6,10 @@
         $cherchInput = $_POST["cherchInput"] ;
         $data = $employeeManager->RechercheParInput($cherchInput);
     }
-        else{$data = $employeeManager->afficher();}
+        else{
+			
+			$data = $employeeManager->getAllEmployees();
+		}
 
 
 
@@ -20,18 +23,20 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="css/style.css">
 	
-	<nav style="background-color: #1c72e2;" class="navbar navbar-dark ">
+	<nav style="background-color: #012030; height : 100px " class="navbar navbar-dark ">
     <div class="container-fluid">
-    <a class="navbar-brand"><img src="images/stisla.png" alt="logo"></a>
+    <a class="navbar-brand "><img  src="images/PME4.png" style=" max-width:80px " alt="logo"></a>
 	
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search.." id="myInput" aria-label="Search">
+    <form method ="post" class="d-flex">
+      <input class="form-control me-2  " type="search" placeholder="Search.." id="myInput" aria-label="Search"name="cherchInput">
+	  <input type="submit" class=  "btn btn-info "  value = "Search">
       
     </form>
+	
 
 	<div class="nav-item"> 
-	<a href="insert.php"  class="btn btn-primary " style=>ajoute</a>
-	<a class=" btn btn-primary" aria-current="page" href="login.php">déconnexion</a>
+	<a href="insert.php"  class="btn btn-success " style=>Ajoute</a>
+	<a class=" btn btn-Danger" aria-current="page" href="login.php">Déconnexion</a>
 	</div>
 	
 
@@ -40,6 +45,11 @@
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
+				</div>
+
+				<div class='container mt-5 mb-5 w-100 '>
+
+				<a class="btn btn-info  "  href='index.php'>Home</a>
 				</div>
 				
 

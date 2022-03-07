@@ -137,6 +137,32 @@
         $employee->setphoto($employee_data['photo']);
         return $employee;
     }  
+
+    public function RechercheParInput($cherchInput){
+
+        $selectedRow = "SELECT * FROM `employees`  WHERE `matricule`= '$cherchInput' OR `nom` = '$cherchInput' OR `prenom` = '$cherchInput'" ;
+        $query = mysqli_query($this->getConnection(), $selectedRow);
+        $data = mysqli_fetch_all($query ,MYSQLI_ASSOC);
+        
+        $employeeArray = array();
+        foreach($data as $searchedEmployee){
+
+            $employee = new Employee();
+            $employee->setmatricule($searchedEmployee['matricule']);
+            $employee->setphoto($searchedEmployee['photo']);
+            $employee->setnom($searchedEmployee['nom']);
+            $employee->setprenom($searchedEmployee['prenom']);
+            $employee->setdate_de_naissance($searchedEmployee['date_de_naissance']);
+            $employee->setdépartement($searchedEmployee['département']);
+            $employee->setfonction($searchedEmployee['fonction']);
+            $employee->setsalaire($searchedEmployee['salaire']);
+            array_Push($employeeArray, $employee);
+
+        }   
+
+        return $employeeArray;
+
+    }
     
 
 

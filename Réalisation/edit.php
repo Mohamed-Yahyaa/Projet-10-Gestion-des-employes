@@ -49,7 +49,7 @@
 	
 
 			<div class="col-6 " style="margin-left:320px" >
-		      	<form action="#" method="POST" class=""style="background-color: #05445E;border-radius: 16px; text-align: center;margin-top:50px; height: 670px;" enctype='multipart/form-data'>
+		      	<form action="#" method="POST" class=""style="background-color: #012030;border-radius: 16px; text-align: center;margin-top:50px; height: 670px;" enctype='multipart/form-data'>
 				  <h2 style="padding-top:30px; color:white">Ajoute les informations</h2>
 				  <div class="">
 						<input style="width:350px ;margin-top:40px; height: 40px; border-radius: 10px;  border:1px solid" type="text" value=<?php echo $employee->getmatricule() ?> class=" col-6" name="matricule" placeholder="matricule" required>
@@ -90,12 +90,13 @@
 					</div>
 					<div class="">
 
-						<input type="file" style="width:350px;margin-top:20px;margin-bottom:20px; height: 40px; margin-left:40px;" class="col-6" value=<?php echo './images/'.$employee->getPhoto(); ?> name="uploadfile"  required >
+						<input type="file" style="width:350px;margin-top:20px;margin-bottom:20px; height: 40px; margin-left:40px;" class="col-6" value=<?php echo './images/'.$employee->getPhoto(); ?> name="uploadfile"  >
 					</div>
 	            <div class="">
 	            	<button type="submit" name="update" style="width:350px; background-color:#189AB4;" class="  btn btn-primary submit px-3" >Modiffer</button>
+					<a href="index.php" class= "btn btn-Warning  ;">Retourner</a>
 	            </div>
-				<a href="index.php" style="margin-right:300px ;color: #189AB4 ;">Retourner</a>
+				
 	            
 	          </form>
 				

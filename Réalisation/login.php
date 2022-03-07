@@ -16,10 +16,10 @@ if(isset($_POST['input'])){
 
 ?>
 <div class="col-6 " style="margin-left:320px" >
-		      <form action="#" method="POST"  class=""style="background-color:#05445E;border-radius: 16px; text-align: center;margin-top:50px; height: 450px;" >
-			  <img src="images/stisla.png" alt="logo" width="70" class="shadow-light rounded-circle mb-5 mt-2">
+		      <form action="#" method="POST"  class=""style="background-color:#012030;border-radius: 16px; text-align: center;margin-top:50px; height: 450px;" >
+			  <img src="images/PME4.png" alt="logo" width="140" class="shadow-light rounded-circle mb-6 mt-3">
 
-			     <h2 style="padding-top:px; color:white">connexion</h2>
+			     <h2 style="padding-top:px; color:white">Connexion</h2>
 					
 					
 					<div class="">
