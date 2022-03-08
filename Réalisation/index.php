@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="css/style.css">
 	
-	<nav style="background-color: #012030; height : 100px " class="navbar navbar-dark ">
+	<nav style="background-color: #012030; height : 100px " class="navbar navbar-dark  ">
     <div class="container-fluid">
     <a class="navbar-brand "><img  src="images/PME4.png" style=" max-width:80px " alt="logo"></a>
 	

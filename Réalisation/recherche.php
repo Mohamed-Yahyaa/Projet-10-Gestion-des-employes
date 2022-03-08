@@ -35,7 +35,7 @@
 	
 
 	<div class="nav-item"> 
-	<a href="insert.php"  class="btn btn-success " style=>Ajoute</a>
+
 	<a class=" btn btn-Danger" aria-current="page" href="login.php">Déconnexion</a>
 	</div>
 	
@@ -48,6 +48,7 @@
 				</div>
 
 				<div class='container mt-5 mb-5 w-100 '>
+				<a href="insert.php"  class="btn btn-success " style=>Ajoute</a>
 
 				<a class="btn btn-info  "  href='index.php'>Home</a>
 				</div>
